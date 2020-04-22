@@ -25,7 +25,7 @@ describe("enhancer.js", () => {
 
       expect(failedItem.enhancement).toEqual(0);
       expect(failedItem.name).toBe("iron sword");
-      expect(failedItem.durability).toEqual(50);
+      expect(failedItem.durability).toEqual(45);
     });
     it("if enhancement is less than 15 then decrease the durability by 5", () => {
       const item = { name: "iron sword", enhancement: 10, durability: 50 };
@@ -72,5 +72,10 @@ describe("enhancer.js", () => {
 });
 
 describe("enhancer.js", () => {
-  describe("get()", () => {});
+  describe("get()", () => {
+    it.todo("if the enhancement is 0 then the name is not changed");
+    it.todo(
+      "if the enhancement is greater than zero then append the enhancement level to the name with a plus sign and enclose it in brackets"
+    );
+  });
 });
