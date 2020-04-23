@@ -73,9 +73,19 @@ describe("enhancer.js", () => {
 
 describe("enhancer.js", () => {
   describe("get()", () => {
-    it.todo("if the enhancement is 0 then the name is not changed");
-    it.todo(
-      "if the enhancement is greater than zero then append the enhancement level to the name with a plus sign and enclose it in brackets"
-    );
+    it("if the enhancement is 0 then the name is not changed", () => {
+      const item = { name: "iron sword", durability: 70, enhancement: 0 };
+
+      const newItem = enhancer.get(item);
+
+      expect(newItem).toEqual(item);
+    });
+    it("if the enhancement is greater than zero then append the enhancement level to the name with a plus sign and enclose it in brackets", () => {
+      const item = { name: "iron sword", durability: 70, enhancement: 15 };
+
+      const newItem = enhancer.get(item);
+
+      expect(newItem.name).toEqual(`[+15] iron sword`);
+    });
   });
 });
